@@ -26,98 +26,8 @@ Project File Date:  05/26/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
+Build target 'Target 1'
 main.c(1): warning: In file included from...
-./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
-   42 | void toggle_GP(unsigned short port, unsigned short pin);
-      |                                                         ^
-main.c(34): warning: no newline at end of file [-Wnewline-eof]
-   34 | }
-      |  ^
-2 warnings generated.
-compiling main.c...
-GPIO.c(1): warning: In file included from...
-./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
-   42 | void toggle_GP(unsigned short port, unsigned short pin);
-      |                                                         ^
-GPIO.c(31): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-   31 |                 *CR &= ~(0xf<<(tPIN)*4); ///Reset the taget pin
-      |                     ~~ ^~~~~~~~~~~~~~~~
-GPIO.c(32): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-   32 |                 *CR |= ((dir <<(tPIN*4)) | (opt<<(tPIN*4+2))); //// Set up the direction and the option of the PIN
-      |                     ~~  ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
-GPIO.c(25): warning: variable 'CR' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-   25 |         else if(port == 3)
-      |                 ^~~~~~~~~
-GPIO.c(31): note: uninitialized use occurs here
-   31 |                 *CR &= ~(0xf<<(tPIN)*4); ///Reset the taget pin
-      |                  ^~
-GPIO.c(25): note: remove the 'if' if its condition is always true
-   25 |         else if(port == 3)
-      |              ^~~~~~~~~~~~~
-   26 |                 {
-GPIO.c(5): note: initialize the variable 'CR' to silence this warning
-    5 |  volatile unsigned long * CR;
-      |                             ^
-      |                              = 0
-GPIO.c(53): warning: implicit conversion changes signedness: 'unsigned long' to 'int' [-Wsign-conversion]
-   53 |         state = ((*IDR & (1<<pin))>>pin);
-      |               ~  ~~~~~~~~~~~~~~~~~^~~~~
-GPIO.c(49): warning: variable 'IDR' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
-   49 |         else if(port == 3)
-      |                 ^~~~~~~~~
-GPIO.c(53): note: uninitialized use occurs here
-   53 |         state = ((*IDR & (1<<pin))>>pin);
-      |                    ^~~
-GPIO.c(49): note: remove the 'if' if its condition is always true
-   49 |         else if(port == 3)
-      |              ^~~~~~~~~~~~~
-   50 |         {
-GPIO.c(37): note: initialize the variable 'IDR' to silence this warning
-   37 |         volatile unsigned long * IDR;
-      |                                     ^
-      |                                      = 0
-GPIO.c(75): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-   75 |         state ? (*ODR |= (state<<pin)) : (*ODR &= ~(1<<pin));
-      |                       ~~  ~~~~~^~~~~
-GPIO.c(75): warning: variable 'ODR' may be uninitialized when used here [-Wconditional-uninitialized]
-   75 |         state ? (*ODR |= (state<<pin)) : (*ODR &= ~(1<<pin));
-      |                   ^~~
-GPIO.c(59): note: initialize the variable 'ODR' to silence this warning
-   59 |                 volatile unsigned long * ODR;
-      |                                             ^
-      |                                              = 0
-GPIO.c(18): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   18 |                         CR = (volatile unsigned long *) (&GPIO_A + offset);
-      |                                                          ^~~~~~~
-GPIO.c(23): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   23 |                         CR = (volatile unsigned long *) (&GPIO_B + offset);
-      |                                                          ^~~~~~~
-GPIO.c(28): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   28 |                         CR = (volatile unsigned long *) (&GPIO_C + offset);
-      |                                                          ^~~~~~~
-GPIO.c(43): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   43 |                         IDR = (volatile unsigned long *) (&GPIO_A + offset);
-      |                                                           ^~~~~~~
-GPIO.c(47): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   47 |                         IDR = (volatile unsigned long *) (&GPIO_B + offset);
-      |                                                           ^~~~~~~
-GPIO.c(51): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   51 |                 IDR = (volatile unsigned long *) (&GPIO_C + offset);
-      |                                                   ^~~~~~~
-GPIO.c(65): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   65 |                         ODR = (volatile unsigned long *) (&GPIO_A + offset);
-      |                                                           ^~~~~~~
-GPIO.c(69): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   69 |                         ODR = (volatile unsigned long *) (&GPIO_B + offset);
-      |                                                           ^~~~~~~
-GPIO.c(73): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   73 |                 ODR = (volatile unsigned long *) (&GPIO_C + offset);
-      |                                                   ^~~~~~~
-17 warnings generated.
-compiling GPIO.c...
-assembling startup_stm32f10x_md.s...
-RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
       |                                                ^
@@ -127,20 +37,32 @@ C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): war
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    26 |   *           - Macros to access peripheral<92>s registers hardware
       |                                            ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
-  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
-      |             ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+main.c(2): warning: In file included from...
+./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
+   42 | void toggle_GP(unsigned short port, unsigned short pin);
+      |                                                         ^
+main.c(4): warning: no previous extern declaration for non-static variable 'signal' [-Wmissing-variable-declarations]
+    4 | int signal = 0;
       |     ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
-      |         ^~~~~~~~~~~~~
-5 warnings generated.
-compiling system_stm32f10x.c...
+main.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    4 | int signal = 0;
+      | ^
+main.c(46): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   46 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+      |                      ^
+      |                       void
+main.c(46): warning: no previous prototype for function 'EXTI0_IRQHandler' [-Wmissing-prototypes]
+   46 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+      |      ^
+main.c(46): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   46 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+      | ^
+      | static 
+7 warnings generated.
+compiling main.c...
 linking...
-Program Size: Code=1524 RO-data=252 RW-data=0 ZI-data=1632  
-".\Objects\push_button.axf" - 0 Error(s), 24 Warning(s).
+Program Size: Code=1684 RO-data=252 RW-data=0 ZI-data=1640  
+".\Objects\push_button.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
