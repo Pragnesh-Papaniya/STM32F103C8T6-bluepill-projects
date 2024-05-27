@@ -27,7 +27,6 @@ Project File Date:  05/27/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-assembling startup_stm32f10x_md.s...
 GPIO.c(1): warning: In file included from...
 ./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
    42 | void toggle_GP(unsigned short port, unsigned short pin);
@@ -108,6 +107,7 @@ GPIO.c(73): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
       |                                                   ^~~~~~~
 17 warnings generated.
 compiling GPIO.c...
+assembling startup_stm32f10x_md.s...
 main.c(1): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
@@ -123,23 +123,36 @@ main.c(2): warning: In file included from...
    42 | void toggle_GP(unsigned short port, unsigned short pin);
       |                                                         ^
 main.c(6): warning: no previous extern declaration for non-static variable 'signal' [-Wmissing-variable-declarations]
-    6 | int signal = 0;
-      |     ^
+    6 | volatile int signal = 0;                                // high when button pressed
+      |              ^
 main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-    6 | int signal = 0;
-      | ^
-main.c(53): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-   53 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
-      |                      ^
-      |                       void
-main.c(53): warning: no previous prototype for function 'EXTI0_IRQHandler' [-Wmissing-prototypes]
-   53 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+    6 | volatile int signal = 0;                                // high when button pressed
+      |          ^
+main.c(7): warning: no previous extern declaration for non-static variable 'count' [-Wmissing-variable-declarations]
+    7 | volatile unsigned long count=0; // when it is 10; 0.1*10=1 sec delay generated
+      |                        ^
+main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    7 | volatile unsigned long count=0; // when it is 10; 0.1*10=1 sec delay generated
+      |          ^
+main.c(41): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
+   41 | void SysTick_Handler(void)
       |      ^
-main.c(53): note: declare 'static' if the function is not intended to be used outside of this translation unit
-   53 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+main.c(41): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   41 | void SysTick_Handler(void)
       | ^
       | static 
-7 warnings generated.
+main.c(55): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   55 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+      |                      ^
+      |                       void
+main.c(55): warning: no previous prototype for function 'EXTI0_IRQHandler' [-Wmissing-prototypes]
+   55 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+      |      ^
+main.c(55): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   55 | void EXTI0_IRQHandler() // Interrupt Handler function for Port A pin 0
+      | ^
+      | static 
+9 warnings generated.
 compiling main.c...
 RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
@@ -163,8 +176,8 @@ RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-
 5 warnings generated.
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=1704 RO-data=252 RW-data=0 ZI-data=1640  
-".\Objects\push_button.axf" - 0 Error(s), 29 Warning(s).
+Program Size: Code=1720 RO-data=252 RW-data=0 ZI-data=1640  
+".\Objects\push_button.axf" - 0 Error(s), 31 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -195,7 +208,7 @@ Package Vendor: Keil
       Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
       Include file:  RTE_Driver/Config/RTE_Device.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
