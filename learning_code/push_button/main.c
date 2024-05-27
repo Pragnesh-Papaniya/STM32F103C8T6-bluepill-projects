@@ -1,7 +1,10 @@
 #include "stm32f10x.h"                  // Device header
 #include "GPIO.h"
-void Delays(int time);
+
+void DelayMillis(unsigned long t);
+void systick_init(void);
 int signal = 0;
+
 int main(void)
 {
 	init_GP(PA,0,IN,I_PP); 					// push button
@@ -14,32 +17,36 @@ int main(void)
 	NVIC_EnableIRQ(EXTI0_IRQn); // Enable the global interrupt function
 	__enable_irq();
 	
-	
 	while(1)
 	{
 		if(signal) /// Checking status of PIN ! portA 
 		{
-			Delays(10);
+			DelayMillis(1000);
 			toggle_GP(PC,13); /// Toggle the PIN state
-			Delays(10);
+			DelayMillis(1000);
 		}
 		else
 		{
 			W_GP(PC,13,1); /// Set the PIN 13 port C high
 		}
-
 	}
-	
 }
 
-// Random generated delay
-void Delays(int time) /// Random delay function
+void systick_init(void)
 {
-	int t;
-	for(;time>0;time--)
+	SysTick->CTRL = 0;
+	SysTick->LOAD = 0x00FFFFFF;
+	SysTick->VAL = 0;
+	SysTick->CTRL |= 5;
+}
+
+void DelayMillis(unsigned long t)
+{
+	for(;t>0;t--)
 	{
-	 for(t=0;t<100000;t++)
-		{}
+		SysTick->LOAD = 0x11940;
+		SysTick->VAL = 0;
+		while((SysTick->CTRL & 0x00010000) == 0);
 	}
 }
 
