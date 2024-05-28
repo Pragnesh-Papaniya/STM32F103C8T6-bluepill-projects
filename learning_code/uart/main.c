@@ -1,30 +1,15 @@
 #include "stm32f10x.h"    
 #include "GPIO.h" 
 #include "systick.h"
+#include "uart.h"
+
 
 char chat = 'C';
 
 int main(void)
 {
-// Delays function	
-	systick_init();
-
-	//-----------Init UART ------------///
-	// Enable the Alternate Function for PINs
-		RCC->APB2ENR |= 1;
-	// Enable UART2
-		RCC->APB1ENR |=0x20000;
-	// Enable the related PINs
-	init_GP(PA,2,OUT50,O_AF_PP);
-	init_GP(PA,3,IN,I_PP);
-	// Setup the baude rate for 9600 bps
-	USART2->BRR = 0xEA6; 
-	// Enable Uart Transmit
-	USART2->CR1 |= 8;
-	// Enable Uart Recive
-	USART2->CR1 |= 4;
-	// Enable Uart
-	USART2->CR1 |= 0x2000;
+systick_init();
+UART_init(2,256000);
 
 
 while(1)
@@ -40,3 +25,6 @@ while(1)
 		USART2->DR = chat;
 	}
 }
+
+
+

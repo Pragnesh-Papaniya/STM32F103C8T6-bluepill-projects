@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'uart' 
+ * Project: '031-STM32F1_USART_LIBRARY_INIT_FUNCTION' 
  * Target:  'Target 1' 
  */
 
