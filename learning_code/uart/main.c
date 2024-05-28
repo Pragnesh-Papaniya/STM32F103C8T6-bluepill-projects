@@ -3,28 +3,15 @@
 #include "systick.h"
 #include "uart.h"
 
-
-char chat = 'C';
+char chat;
 
 int main(void)
 {
-systick_init();
 UART_init(2,256000);
-
-
-while(1)
+	
+	while(1)
 	{
-		// Recieve Char
-		while((USART2->SR & 0x20) == 0x00)
-		{}
-		chat = USART2->DR;
-		// Transmit Char
-		//DelayMs(100);
-		while((USART2->SR & (1<<6)) == 0x40)
-		{}
-		USART2->DR = chat;
+		chat = UART_RX(2);
+		UART_TX(2,chat);
 	}
 }
-
-
-

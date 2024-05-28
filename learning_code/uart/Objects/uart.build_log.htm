@@ -27,46 +27,6 @@ Project File Date:  05/28/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-systick.c(1): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-systick.c(2): warning: In file included from...
-./systick.h(2): warning: no newline at end of file [-Wnewline-eof]
-    2 | void DelayMs(unsigned long t);
-      |                               ^
-systick.c(19): warning: no newline at end of file [-Wnewline-eof]
-   19 | }
-      |  ^
-5 warnings generated.
-compiling systick.c...
-RTE/Device/STM32F103C8/system_stm32f10x.c(65): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
-  167 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
-      |             ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-  167 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
-      |     ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(409): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  409 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
-      |         ^~~~~~~~~~~~~
-5 warnings generated.
-compiling system_stm32f10x.c...
 assembling startup_stm32f10x_md.s...
 GPIO.c(1): warning: In file included from...
 ./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
@@ -171,17 +131,58 @@ main.c(4): warning: In file included from...
 ./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
    42 | void toggle_GP(unsigned short port, unsigned short pin);
       |                                                         ^
-main.c(7): warning: no previous extern declaration for non-static variable 'chat' [-Wmissing-variable-declarations]
-    7 | char chat = 'C';
+main.c(4): warning: In file included from...
+./uart.h(7): warning: no newline at end of file [-Wnewline-eof]
+    7 | void UART_TX(unsigned short uart,char c);
+      |                                          ^
+main.c(6): warning: no previous extern declaration for non-static variable 'chat' [-Wmissing-variable-declarations]
+    6 | char chat;
       |      ^
-main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-    7 | char chat = 'C';
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    6 | char chat;
       | ^
-main.c(20): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
-   20 |                 chat = USART2->DR;
-      |                      ~ ~~~~~~~~^~
 8 warnings generated.
 compiling main.c...
+systick.c(1): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+systick.c(2): warning: In file included from...
+./systick.h(2): warning: no newline at end of file [-Wnewline-eof]
+    2 | void DelayMs(unsigned long t);
+      |                               ^
+systick.c(19): warning: no newline at end of file [-Wnewline-eof]
+   19 | }
+      |  ^
+5 warnings generated.
+compiling systick.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(65): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  167 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  167 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(409): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  409 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
 uart.c(1): warning: In file included from...
 ./uart.h(1): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
@@ -198,6 +199,10 @@ uart.c(1): warning: In file included from...
 ./GPIO.h(42): warning: no newline at end of file [-Wnewline-eof]
    42 | void toggle_GP(unsigned short port, unsigned short pin);
       |                                                         ^
+uart.c(1): warning: In file included from...
+./uart.h(7): warning: no newline at end of file [-Wnewline-eof]
+    7 | void UART_TX(unsigned short uart,char c);
+      |                                          ^
 uart.c(24): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
    24 |         USART1->BRR = BRR_Cal; 
       |                     ~ ^~~~~~~
@@ -210,11 +215,54 @@ uart.c(50): warning: implicit conversion loses integer precision: 'unsigned long
 uart.c(73): warning: implicit conversion turns floating-point number into integer: 'double' to 'unsigned long' [-Wfloat-conversion]
    73 |         dec = frac;
       |             ~ ^~~~
-8 warnings generated.
+uart.c(98): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+   98 |                 {};
+      |                   ^
+uart.c(99): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+   99 |                 c = USART1->DR;
+      |                   ~ ~~~~~~~~^~
+uart.c(104): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  104 |                 {};
+      |                   ^
+uart.c(105): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  105 |                 c = USART2->DR;
+      |                   ~ ~~~~~~~~^~
+uart.c(110): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  110 |                 {};
+      |                   ^
+uart.c(111): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  111 |                 c = USART3->DR;
+      |                   ~ ~~~~~~~~^~
+uart.c(113): warning: variable 'c' may be uninitialized when used here [-Wconditional-uninitialized]
+  113 |                 return c;
+      |                        ^
+uart.c(94): note: initialize the variable 'c' to silence this warning
+   94 |         char c;
+      |               ^
+      |                = '\0'
+uart.c(120): warning: result of comparison of 7-bit unsigned value == 128 is always false [-Wtautological-value-range-compare]
+  120 |                         while((USART1->SR & (1<<6)) == 0x80)
+      |                               ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+uart.c(121): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  121 |                         {};
+      |                           ^
+uart.c(126): warning: result of comparison of 7-bit unsigned value == 128 is always false [-Wtautological-value-range-compare]
+  126 |                         while((USART2->SR & (1<<6)) == 0x80)
+      |                               ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+uart.c(127): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  127 |                         {};
+      |                           ^
+uart.c(132): warning: result of comparison of 7-bit unsigned value == 128 is always false [-Wtautological-value-range-compare]
+  132 |                         while((USART3->SR & (1<<6)) == 0x80)
+      |                               ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+uart.c(133): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  133 |                         {};
+      |                           ^
+22 warnings generated.
 compiling uart.c...
 linking...
-Program Size: Code=4448 RO-data=268 RW-data=4 ZI-data=1632  
-".\Objects\uart.axf" - 0 Error(s), 43 Warning(s).
+Program Size: Code=4640 RO-data=252 RW-data=0 ZI-data=1640  
+".\Objects\uart.axf" - 0 Error(s), 57 Warning(s).
 
 <h2>Software Packages used:</h2>
 

@@ -88,3 +88,49 @@ unsigned long USART_BRR(unsigned short usart, unsigned long BR)
 	return final;
 	
 }
+
+char UART_RX(unsigned short uart)
+{
+	char c;
+	if(uart == 1)
+		{
+		while((USART1->SR & 0x20) == 0x00)
+		{};
+		c = USART1->DR;
+		}
+	else if(uart == 2)
+		{
+		while((USART2->SR & 0x20) == 0x00)
+		{};
+		c = USART2->DR;
+		}
+		if(uart == 3)
+		{
+		while((USART3->SR & 0x20) == 0x00)
+		{};
+		c = USART3->DR;
+		}
+		return c;
+}
+
+void UART_TX(unsigned short uart,char c)
+{
+	if(uart == 1)
+		{
+			while((USART1->SR & (1<<6)) == 0x80)
+			{};
+			USART1->DR = c;
+		}
+	else if(uart == 2)
+		{
+			while((USART2->SR & (1<<6)) == 0x80)
+			{};
+			USART2->DR = c;
+		}
+		if(uart == 3)
+		{
+			while((USART3->SR & (1<<6)) == 0x80)
+			{};
+			USART3->DR = c;
+		}
+}
