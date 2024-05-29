@@ -15,12 +15,13 @@ spi_init(1);
 	{
 		//Sending some data
 		DelayMs(50);
-		spi_tx(1,'W');
+		spi_tx(1,'H');
 		spi_tx(1,'e');
-		spi_tx(1,'e');
-		spi_tx(1,'W');
+		spi_tx(1,'l');
+		spi_tx(1,'l');
+		spi_tx(1,'o');
 		
-		spi_msg(1, "WeeW");
+		spi_msg(1, "Hello");
 	}
 	
 }

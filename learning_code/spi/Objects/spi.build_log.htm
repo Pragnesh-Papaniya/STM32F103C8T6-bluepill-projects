@@ -27,46 +27,6 @@ Project File Date:  05/29/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-assembling startup_stm32f10x_md.s...
-main.c(1): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-main.c(26): warning: no newline at end of file [-Wnewline-eof]
-   26 | }
-      |  ^
-4 warnings generated.
-compiling main.c...
-SPI_drive.c(1): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-SPI_drive.c(69): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   69 |         while(str[i])
-      |               ^~~
-SPI_drive.c(71): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   71 |                 SPI1->DR = str[i];
-      |                            ^~~
-SPI_drive.c(80): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   80 |         while(str[i])
-      |               ^~~
-SPI_drive.c(82): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   82 |                 SPI2->DR = str[i];
-      |                            ^~~
-7 warnings generated.
-compiling SPI_drive.c...
 gp_drive.c(1): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
@@ -156,6 +116,31 @@ gp_drive.c(76): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
       |                                                  ^~~~~~~
 20 warnings generated.
 compiling gp_drive.c...
+assembling startup_stm32f10x_md.s...
+SPI_drive.c(1): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+SPI_drive.c(69): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   69 |         while(str[i])
+      |               ^~~
+SPI_drive.c(71): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   71 |                 SPI1->DR = str[i];
+      |                            ^~~
+SPI_drive.c(80): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   80 |         while(str[i])
+      |               ^~~
+SPI_drive.c(82): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   82 |                 SPI2->DR = str[i];
+      |                            ^~~
+7 warnings generated.
+compiling SPI_drive.c...
 systick_time.c(1): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
@@ -211,6 +196,21 @@ systick_time.c(78): warning: unsafe buffer access [-Wunsafe-buffer-usage]
       |                 ^~~~~~~~~~
 16 warnings generated.
 compiling systick_time.c...
+main.c(1): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(27): warning: no newline at end of file [-Wnewline-eof]
+   27 | }
+      |  ^
+4 warnings generated.
+compiling main.c...
 RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
@@ -233,7 +233,7 @@ RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-
 5 warnings generated.
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=2078 RO-data=258 RW-data=0 ZI-data=1632  
+Program Size: Code=2086 RO-data=258 RW-data=0 ZI-data=1632  
 ".\Objects\spi.axf" - 0 Error(s), 52 Warning(s).
 
 <h2>Software Packages used:</h2>
