@@ -1,12 +1,3 @@
-/*
-//// Library used to setup GPIOs for more details, visit:
-
-https://youtu.be/e0JfbZEditA
-
-*/
-
-
-
 #include "stm32f10x.h"    
 #include "gp_drive.h"
 
