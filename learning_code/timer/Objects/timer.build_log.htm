@@ -27,35 +27,6 @@ Project File Date:  05/30/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-msg_drive.c(1): warning: In file included from...
-./msg_drive.h(1): warning: In file included from...
-./uart_drive.h(1): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-msg_drive.c(14): warning: unused parameter 'uart' [-Wunused-parameter]
-   14 | void sync(char uart,char channels)
-      |                ^
-msg_drive.c(36): warning: array subscript is of type 'char' [-Wchar-subscripts]
-   36 |                 InsertData(data[i],wip);
-      |                                ^~
-msg_drive.c(55): warning: array subscript is of type 'char' [-Wchar-subscripts]
-   55 |                 msg_len += InsertData(data[i],wip);
-      |                                           ^~
-msg_drive.c(36): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   36 |                 InsertData(data[i],wip);
-      |                            ^~~~
-msg_drive.c(55): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   55 |                 msg_len += InsertData(data[i],wip);
-      |                                       ^~~~
-8 warnings generated.
-compiling msg_drive.c...
 help_func.c(128): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
   128 |         lstr[cnt] = num % div + 0x30;
       |                   ~ ~~~~~~~~~~^~~~~~
@@ -121,45 +92,6 @@ help_func.c(174): warning: unsafe buffer access [-Wunsafe-buffer-usage]
       |                                                ^~~
 21 warnings generated.
 compiling help_func.c...
-main.c(4): warning: In file included from...
-./timer_drive.h(1): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-3 warnings generated.
-compiling main.c...
-timer_drive.c(1): warning: In file included from...
-./timer_drive.h(1): warning: In file included from...
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-      |                                                ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   19 |   *                code will be based on direct access to peripheral<92>s registers 
-      |                                                                     ^
-C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-   26 |   *           - Macros to access peripheral<92>s registers hardware
-      |                                            ^
-timer_drive.c(28): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-   28 |         tim->PSC = prescaler;   
-      |                  ~ ^~~~~~~~~
-timer_drive.c(31): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-   31 |         tim->ARR = (microS-3);  
-      |                  ~  ~~~~~~^~
-timer_drive.c(25): warning: variable 'tim' may be uninitialized when used here [-Wconditional-uninitialized]
-   25 |         tim->CNT = 0;
-      |         ^~~
-timer_drive.c(5): note: initialize the variable 'tim' to silence this warning
-    5 |         TIM_TypeDef * tim;
-      |                          ^
-      |                           = 0
-6 warnings generated.
-compiling timer_drive.c...
 gp_drive.c(1): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
@@ -249,6 +181,62 @@ gp_drive.c(76): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
       |                                                  ^~~~~~~
 20 warnings generated.
 compiling gp_drive.c...
+msg_drive.c(1): warning: In file included from...
+./msg_drive.h(1): warning: In file included from...
+./uart_drive.h(1): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+msg_drive.c(14): warning: unused parameter 'uart' [-Wunused-parameter]
+   14 | void sync(char uart,char channels)
+      |                ^
+msg_drive.c(36): warning: array subscript is of type 'char' [-Wchar-subscripts]
+   36 |                 InsertData(data[i],wip);
+      |                                ^~
+msg_drive.c(55): warning: array subscript is of type 'char' [-Wchar-subscripts]
+   55 |                 msg_len += InsertData(data[i],wip);
+      |                                           ^~
+msg_drive.c(36): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   36 |                 InsertData(data[i],wip);
+      |                            ^~~~
+msg_drive.c(55): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   55 |                 msg_len += InsertData(data[i],wip);
+      |                                       ^~~~
+8 warnings generated.
+compiling msg_drive.c...
+main.c(2): warning: In file included from...
+./timer_drive.h(1): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(38): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   38 | void TIM1_UP_IRQHandler(){
+      |                        ^
+      |                         void
+main.c(41): warning: no newline at end of file [-Wnewline-eof]
+   41 | }
+      |  ^
+main.c(38): warning: no previous prototype for function 'TIM1_UP_IRQHandler' [-Wmissing-prototypes]
+   38 | void TIM1_UP_IRQHandler(){
+      |      ^
+main.c(38): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   38 | void TIM1_UP_IRQHandler(){
+      | ^
+      | static 
+6 warnings generated.
+compiling main.c...
 systick_time.c(1): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
@@ -304,6 +292,65 @@ systick_time.c(93): warning: unsafe buffer access [-Wunsafe-buffer-usage]
       |                 ^~~~~~~~~~
 16 warnings generated.
 compiling systick_time.c...
+timer_drive.c(1): warning: In file included from...
+./timer_drive.h(1): warning: In file included from...
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+timer_drive.c(3): warning: no previous prototype for function 'get_timer' [-Wmissing-prototypes]
+    3 | TIM_TypeDef * get_timer(char timer){
+      |               ^
+timer_drive.c(3): note: declare 'static' if the function is not intended to be used outside of this translation unit
+    3 | TIM_TypeDef * get_timer(char timer){
+      | ^
+      | static 
+timer_drive.c(12): warning: variable 'tim' may be uninitialized when used here [-Wconditional-uninitialized]
+   12 |         return tim;
+      |                ^~~
+timer_drive.c(4): note: initialize the variable 'tim' to silence this warning
+    4 |         TIM_TypeDef * tim;
+      |                          ^
+      |                           = 0
+timer_drive.c(34): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   34 |         tim->PSC = prescaler;   
+      |                  ~ ^~~~~~~~~
+timer_drive.c(37): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   37 |         tim->ARR = (microS-3);  
+      |                  ~  ~~~~~~^~
+timer_drive.c(15): warning: no previous prototype for function 'timer_start_micros' [-Wmissing-prototypes]
+   15 | TIM_TypeDef * timer_start_micros(char timer, int microS){
+      |               ^
+timer_drive.c(15): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   15 | TIM_TypeDef * timer_start_micros(char timer, int microS){
+      | ^
+      | static 
+timer_drive.c(64): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   64 |         tim->PSC = prescaler;   
+      |                  ~ ^~~~~~~~~
+timer_drive.c(67): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   67 |         tim->ARR = (millis*2);  
+      |                  ~  ~~~~~~^~
+timer_drive.c(45): warning: no previous prototype for function 'timer_start_millis' [-Wmissing-prototypes]
+   45 | TIM_TypeDef * timer_start_millis(char timer, int millis){
+      |               ^
+timer_drive.c(45): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   45 | TIM_TypeDef * timer_start_millis(char timer, int millis){
+      | ^
+      | static 
+timer_drive.c(176): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  176 |                 RCC->APB2ENR &= ~0x0800;
+      |                              ~~ ^~~~~~~
+timer_drive.c(183): warning: no newline at end of file [-Wnewline-eof]
+  183 | }
+      |  ^
+13 warnings generated.
+compiling timer_drive.c...
 adc_drive.c(1): warning: In file included from...
 ./adc_drive.h(2): warning: In file included from...
 C:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
@@ -568,8 +615,8 @@ RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-
 5 warnings generated.
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=1704 RO-data=252 RW-data=0 ZI-data=1632  
-".\Objects\timer.axf" - 0 Error(s), 154 Warning(s).
+Program Size: Code=2108 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\timer.axf" - 0 Error(s), 164 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -596,10 +643,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.0.0
 
    * Component: Keil::Device:Startup@1.0.0
-      Include file:  RTE_Driver/Config/RTE_Device.h
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
-      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
       Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
